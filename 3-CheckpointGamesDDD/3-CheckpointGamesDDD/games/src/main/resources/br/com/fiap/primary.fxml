@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="471.0" prefWidth="826.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.fiap.PrimaryController">
+  <tabs>
+    <Tab text="Cadastro">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="370.0" prefWidth="630.0">
+               <children>
+                  <Button layoutX="464.0" layoutY="341.0" mnemonicParsing="false" onAction="#salvar" text="Salvar" />
+                  <TextField fx:id="textFieldTitulo" layoutX="164.0" layoutY="32.0" prefHeight="28.0" prefWidth="300.0" />
+                  <Label layoutX="58.0" layoutY="32.0" text="Título">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="54.0" layoutY="86.0" text="Descrição">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="61.0" layoutY="149.0" text="Nota">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="51.0" layoutY="211.0" text="Genero">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="textFieldDescricao" layoutX="164.0" layoutY="86.0" prefHeight="28.0" prefWidth="300.0" />
+                  <TextField fx:id="textFieldGenero" layoutX="164.0" layoutY="211.0" prefHeight="28.0" prefWidth="300.0" />
+                  <TextField fx:id="textFieldNota" layoutX="164.0" layoutY="149.0" prefHeight="28.0" prefWidth="300.0" />
+                  <ChoiceBox fx:id="choiceBoxJogoNaoZerado" layoutX="156.0" layoutY="272.0" prefWidth="150.0" />
+                  <Label layoutX="53.0" layoutY="276.0" text="Status do jogo" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab text="Consulta">
+         <content>
+            <BorderPane prefHeight="200.0" prefWidth="200.0">
+               <center>
+                  <ListView fx:id="ListView" onEditStart="#JogoNaoZerado" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+               </center>
+               <top>
+                  <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                    <items>
+                      <Button mnemonicParsing="false" onAction="#OrdenarPorNota" text="Ordenar por Nota" />
+                        <Button mnemonicParsing="false" onAction="#OrdenarPorGenero" text="Ordenar por Gênero" />
+                        <Button mnemonicParsing="false" onAction="#OrdenarPorTitulo" text="Ordenar por Titulo" />
+                        <Button mnemonicParsing="false" onAction="#JogoNaoZerado" text="Jogos não-zerados" />
+                    </items>
+                  </ToolBar>
+               </top>
+            </BorderPane>
+         </content>
+    </Tab>
+  </tabs>
+</TabPane>
